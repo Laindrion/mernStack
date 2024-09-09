@@ -2,9 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 
 dotenv.config();
+
 const app = express();
 
-app.get("/", (reg, res) => {
+app.post("/products", (reg, res) => {
     res.send("Send is ready");
 });
 
