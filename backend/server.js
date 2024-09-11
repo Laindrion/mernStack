@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import express from "express";
 import dotenv from "dotenv";
+import Product from "./models/product.model.js";
 import { connectDB } from "./config/db.js";
 
 dotenv.config();
@@ -8,7 +9,6 @@ dotenv.config();
 const app = express();
 
 app.use(express.json()); // allows us to accept json data in a req.body
-
 
 app.post("/api/products", async (req, res) => {
     const product = req.body; // user will send this data
@@ -23,7 +23,8 @@ app.post("/api/products", async (req, res) => {
         await newProduct.save();
         res.status(201).json({ success: true, data: newProduct })
     } catch (error) {
-        console.error("Error in Create product:",)
+        console.error("Error in Create product:", error.message);
+        res.status(500).json({ success: false, message: "Server error" });
     }
 });
 
