@@ -30,8 +30,8 @@ const CreatePage = () => {
         status: "success",
         isClosable: true
       })
+      setNewProduct({ name: "", price: "", image: "" });
     }
-    setNewProduct({ name: "", price: "", image: "" });
   }
   return (
     <Container maxW={"container.sm"}>
