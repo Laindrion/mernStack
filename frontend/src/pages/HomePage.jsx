@@ -25,14 +25,14 @@ const HomePage = () => {
                 </Text>
 
 
-                <SimpleGrid columns={{
-                    base: 1,
-                    md: 2,
-                    lg: 3
-                }}
+                <SimpleGrid
+                    columns={{
+                        base: 1,
+                        md: 2,
+                        lg: 3
+                    }}
                     spacing={10}
-                    w={"full"}
-                >
+                    w={"full"}>
                     {products.map((product) => (
                         <ProductCard key={product._id} product={product} />
                     ))}
@@ -42,8 +42,8 @@ const HomePage = () => {
                     <Text
                         fontSize={"x1"}
                         textAlign={"center"}
-                        fontWeight={"bold"}
-                        color={"gray.500"}
+                        fontWeight="bold"
+                        color="gray.500"
                     >
                         No products found 😢 {" "}
                         <Link to={"/create"}>
@@ -53,7 +53,6 @@ const HomePage = () => {
                                 _hover={{ textDecoration: "underline" }}
                             >
                                 Create a product
-
                             </Text>
                         </Link>
                     </Text>
